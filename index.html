@@ -13,8 +13,6 @@
             --accent-pink: #ff5d8f;
             --accent-rose: #ff8fa3;
             --accent-gold: #ffd166;
-            --accent-platinum: #f3e8ff;
-            --accent-brown: #c68b59;
             --glass-bg: rgba(255, 255, 255, 0.055);
             --glass-border: rgba(255, 255, 255, 0.13);
             --text-main: #fff5f7;
@@ -197,7 +195,7 @@
             padding: 32px 16px 95px;
         }
 
-        /* Üst Müzik Barı (Sayfa İçi + Sabit Alt Oynatıcı) */
+        /* Üst Müzik Barı */
         .music-bar {
             display: flex;
             align-items: center;
@@ -474,6 +472,30 @@
             border-left: 3px solid var(--accent-gold);
         }
 
+        /* Bana Neden Bu Kadar İyi Geliyorsun Bölümü */
+        .reasons-list {
+            list-style: none;
+            display: grid;
+            gap: 12px;
+        }
+
+        .reasons-list li {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 14px 16px;
+            font-size: 0.94rem;
+            color: #f9eaf0;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .reasons-list span {
+            font-size: 1.15rem;
+            flex-shrink: 0;
+        }
+
         /* Etkileşimli Söz / Mesaj Makinesi */
         .note-generator {
             text-align: center;
@@ -677,9 +699,9 @@
     <!-- Açılış Karşılama Ekranı -->
     <div id="welcome-overlay">
         <div class="envelope-card">
-            <div class="badge-pill">✨ Platin Parıltısı & Kahve Gözler • Eylül</div>
+            <div class="badge-pill">✨ Platin Parıltısı & Kahve Gözler • Sarı Civcivim</div>
             <h2 class="envelope-title">Sana Özel Bir Sayfa Var</h2>
-            <p class="envelope-sub">Biraz romantizm, biraz tatlı kıskançlık, voleybol enerjisi ve favori şarkın...</p>
+            <p class="envelope-sub">Biraz romantizm, biraz tatlı kıskançlık, gülen gözler ve favori şarkın...</p>
             <button class="open-btn" onclick="openSite()">Sürprizi Aç & Şarkıyı Başlat 🎶</button>
         </div>
     </div>
@@ -718,13 +740,13 @@
 
         <!-- Hero -->
         <header class="hero reveal">
-            <span class="hero-tag">İyi ki varsın, Eylül...</span>
+            <span class="hero-tag">İyi ki varsın, Aşkım...</span>
             <h1>Eylül ✨</h1>
-            <p>Kahverengi gözlerinin derinliği, yeni platin sarısı saçlarının ışıltısı ve sahadaki o durdurulamaz enerjinle kalbimin en güzel köşesindesin.</p>
+            <p>Kahverengi gözlerinin derinliği, yeni platin sarısı saçlarının ışıltısı ve o eşsiz tatlılığınla kalbimin en güzel köşesindesin, Hayatım.</p>
             <div class="detail-chips">
                 <span class="chip">🤎 Kahverengi Gözler</span>
-                <span class="chip">🤍 Yeni Platin Sarısı Saçlar</span>
-                <span class="chip">🏐 Voleybol Tutkusu</span>
+                <span class="chip">💛 Yeni Platin Sarısı Saçlar</span>
+                <span class="chip">🐥 Sarı Civcivim</span>
                 <span class="chip">😌 Tatlı Kıskançlık</span>
             </div>
         </header>
@@ -733,13 +755,13 @@
         <section class="glass-card letter-text reveal">
             <h2 class="section-title">💌 Sana Yazdığım Mektup</h2>
             <p>
-                Eylül, bazı insanlar vardır; hayatına girdikten sonra sıradan görünen hiçbir şey eskisi gibi kalmaz. Seninle konuşmaya başladığım, seni tanıdığım günden beri aklımın en güzel yerinde hep sen varsın.
+                Hayatım, bazı insanlar vardır; hayatına girdikten sonra sıradan görünen hiçbir şey eskisi gibi kalmaz. Seninle konuşmaya başladığım, seni tanıdığım günden beri aklımın en güzel yerinde hep sen varsın.
             </p>
             <p>
-                O derin kahverengi gözlerine baktığımda insanın kendini kaybetmemesi elde değil; üstüne bir de yeni platin sarısı saçlarınla ışığın iyice artmış, resmen göz kamaştırıyorsun. Sahada voleybol oynarken o bitmeyen hırsın, hızın ve her sayıdan sonraki o içten gülüşün ise ayrı bir büyü.
+                O derin kahverengi gözlerine baktığımda insanın kendini kaybetmemesi elde değil; üstüne bir de yeni platin sarısı saçlarınla ışığın iyice artmış, resmen göz kamaştırıyorsun. Bazen içimden sana "Sarı Civcivim" diye seslenesim geliyor; hem bu kadar tatlı hem bu kadar göz alıcı olman ayrı bir büyü.
             </p>
             <p>
-                İtiraf edeyim, bazen tatlı bir kıskançlık da yok değil hani... Hem bu kadar güzel olup hem sahada parladığında, ya da etrafında senin o enerjine kapılanları fark ettiğimde içimden "keşke bu güzelliği ve neşeyi sadece ben görebilsem" diye geçirdiğim anlar oluyor. Ama en çok da senin mutlu olmanı, gülmeni istiyorum.
+                İtiraf edeyim, bazen tatlı bir kıskançlık da yok değil hani Aşkım... Hem bu kadar güzel olup hem etrafına bu kadar ışık saçtığında, ya da kahverengi gözlerine bakanları fark ettiğimde içimden "keşke bu güzelliği ve neşeyi sadece ben görebilsem" diye geçirdiğim anlar oluyor. Ama en çok da senin mutlu olmanı, gülmeni istiyorum.
             </p>
             <p>
                 Bu sayfayı seninle konuşurken hissettiğim o tatlı heyecanı, gülümsemeleri ve sana dair sevdiğim her şeyi bir arada tutmak için yaptım. İyi ki varsın, Eylül.
@@ -747,27 +769,27 @@
             <div class="signature">Seni hep merakla ve sevgiyle izleyen biri... ❤️</div>
         </section>
 
-        <!-- Güzelliği, Saçları, Gözleri ve Voleybol Kartları -->
+        <!-- Güzelliği, Saçları, Gözleri ve Tatlılığı Kartları -->
         <section class="grid-cards reveal">
             <div class="mini-card">
                 <span class="icon">🤎</span>
                 <h3>Kahverengi Gözlerin</h3>
-                <p>Sıcak, derin ve insanın içine işleyen o kahverengi bakışların; en karışık günümü bile tek bakışta sakinleştiriyor.</p>
+                <p>Sıcak, derin ve insanın içine işleyen o kahverengi bakışların; en karışık günümü bile tek bakışta sakinleştiriyor, Aşkım.</p>
             </div>
             <div class="mini-card">
                 <span class="icon">✨</span>
                 <h3>Yeni Platin Sarısı Saçların</h3>
-                <p>Yeni saç renginle ışığın ikiye katlanmış gibi; güneş vurduğunda da ışık altında da ayrı bir zarafet katıyor.</p>
+                <p>Yeni saç renginle ışığın ikiye katlanmış gibi; güneş vurduğunda da ışık altında da ayrı bir zarafet katıyor, Sarı Civcivim.</p>
             </div>
             <div class="mini-card">
-                <span class="icon">🏐</span>
-                <h3>Sahadaki Voleybol Aşkı</h3>
-                <p>Topu karşı sahaya gönderirken ki o odaklanmış halin ve o güzel reflekslerinle sahada bambaşka bir dünyadasın.</p>
+                <span class="icon">🐥</span>
+                <h3>Sarı Civcivim'in Tatlılığı</h3>
+                <p>O içten tavırların, şirin hallerin ve gülüşünle günümü aydınlatan en tatlı sürprizsin, Hayatım.</p>
             </div>
             <div class="mini-card">
                 <span class="icon">🌸</span>
-                <h3>Tatlılığın & Zarafetin</h3>
-                <p>Hem iddialı ve güçlü olup hem de bu kadar tatlı ve içten olabilmen seni gerçekten benzersiz kılıyor.</p>
+                <h3>Güzelliğin & Zarafetin</h3>
+                <p>Hem bu kadar zarif hem de bu kadar içten olabilmen seni benim için gerçekten benzersiz kılıyor.</p>
             </div>
         </section>
 
@@ -775,14 +797,25 @@
         <section class="jealous-banner reveal">
             <h2 class="section-title" style="margin-bottom: 8px;">😌 Küçük Bir Kıskançlık İtirafı</h2>
             <p style="font-size: 0.94rem; color: var(--text-muted);">
-                Sana karşı dürüst olalım: kahverengi gözler, yeni platin sarısı saçlar ve sahadaki o enerji bir araya gelince kıskanmamak imkansız gibi bir şey!
+                Sana karşı dürüst olalım Hayatım: kahverengi gözler ve yeni platin sarısı saçlar bir araya gelince kıskanmamak imkansız gibi bir şey!
             </p>
             <div class="jealous-quote">
-                "Sahada smaç basarken herkes alkışlasın, sorun yok; ama kalbime attığın o bakışların telif hakkı tamamen bende kalsın!"
+                "Yeni platin saçlarınla herkesin dikkatini çekebilirsin ama kalbime attığın o tatlı bakışların telif hakkı tamamen bende kalsın, Aşkım!"
             </div>
             <p style="font-size: 0.88rem; color: #ffd6e0;">
                 Tabii bu kıskançlık asla boğucu değil; tam tersine seni ne kadar önemsediğimin ve kaybetmek istemediğimin en tatlı hali.
             </p>
+        </section>
+
+        <!-- Sana Dair Sevdiğim Küçük Şeyler -->
+        <section class="glass-card reveal">
+            <h2 class="section-title">💖 Sana Dair Sevdiğim Küçük Şeyler</h2>
+            <ul class="reasons-list">
+                <li><span>🤎</span><div>Kahverengi gözlerinin içindeki o sıcak ve derin bakış, tek başına moralimi yükseltmeye yetiyor.</div></li>
+                <li><span>💛</span><div>Yeni platin sarısı saçlarınla ışıl ışıl parladığın o anlar, Sarı Civcivim dememi iyice haklı çıkarıyor.</div></li>
+                <li><span>😌</span><div>Kıskandığımda bile seni ne kadar çok sevdiğimi fark etmek, içimde ayrı bir sıcaklık oluşturuyor.</div></li>
+                <li><span>✨</span><div>Seninle konuşurken yüzümde oluşan o istemsiz gülümseme, günümün en güzel hediyesi oluyor, Hayatım.</div></li>
+            </ul>
         </section>
 
         <!-- Etkileşimli Sözler & Espirili Romantik Mesajlar -->
@@ -800,7 +833,7 @@
             </div>
 
             <div class="note-display" id="noteBox">
-                "Kahverengi gözlerinle baktığında, yeni platin sarısı saçların kadar parlak bir gün başlıyor içimde."
+                "Kahverengi gözlerinle baktığında, yeni platin sarısı saçların kadar parlak bir gün başlıyor içimde, Hayatım."
             </div>
 
             <button class="secondary-btn" onclick="nextQuote()">Yeni Söz / Mesaj Göster 🔄</button>
@@ -808,40 +841,40 @@
 
         <!-- Final Sürpriz & Buluşma Alanı -->
         <section class="glass-card final-box reveal">
-            <h2>Bir Kahveye Ya Da Güzel Bir Sohbete Ne Dersin?</h2>
-            <p>Voleybol molasında ya da müsait olduğun tatlı bir akşamda, kahverengi gözlerinin karşısında uzun uzun konuşmak isterim.</p>
+            <h2>Bir Kahveye Ya Da Güzel Bir Sohbete Ne Dersin, Aşkım?</h2>
+            <p>Müsait olduğun tatlı bir günde, kahverengi gözlerinin karşısında uzun uzun konuşmak ve gülmek isterim.</p>
             <div class="btn-group">
-                <button class="yes-btn" onclick="celebrateFinal('Kahve sözü alındı! ☕❤️')">Kahve İçin Anlaştık ☕❤️</button>
-                <button class="yes-btn" style="background: linear-gradient(135deg, #9d4edd, #c77dff);" onclick="celebrateFinal('Sahanın yıldızıyla her an harika! 🏐✨')">Harika Olur Eylül 🏐✨</button>
+                <button class="yes-btn" onclick="celebrateFinal('Kahve sözü alındı, Hayatım! ☕❤️')">Kahve İçin Anlaştık ☕❤️</button>
+                <button class="yes-btn" style="background: linear-gradient(135deg, #9d4edd, #c77dff);" onclick="celebrateFinal('Harika olur Sarı Civcivim! 💛✨')">Harika Olur Eylül 💛✨</button>
             </div>
 
             <div id="final-response">
                 <h3 id="finalTitle">Günüm güzelleşti! 🌹</h3>
-                <p id="finalDesc" style="margin-bottom: 0; color: #fff;">Bu sayfa senin gülümsemen için yapıldı Eylül, iyi ki varsın!</p>
+                <p id="finalDesc" style="margin-bottom: 0; color: #fff;">Bu sayfa senin gülümsemen için yapıldı, iyi ki varsın!</p>
             </div>
         </section>
 
         <footer>
-            Sadece Eylül'e özel hazırlandı • 🤎🤍🏐❤️
+            Sadece sana özel hazırlandı • 🤎💛✨❤️
         </footer>
     </main>
 
-    <!-- Sabit Alt Müzik Kontrol Çubuğu -->
+    <!-- Sabit Alt Mini Müzik Kontrol Çubuğu -->
     <div class="floating-player">
-        <span id="miniTrackTitle">🎵 Şarkı Hazır • Eylül İçin</span>
+        <span id="miniTrackTitle">🎵 Şarkı Hazır • Aşkım İçin</span>
         <button class="mini-play-btn" id="miniPlayBtn" onclick="toggleMusic()">▶ Çal</button>
     </div>
 
     <script>
         const quotes = [
-            { cat: 'romantic', text: "Kahverengi gözlerinle baktığında, yeni platin sarısı saçların kadar parlak bir gün başlıyor içimde." },
-            { cat: 'romantic', text: "Bazı güzellikler geçicidir; sen ise aklımda ve kalbimde kalıcı olmanın en tatlı halisin, Eylül." },
-            { cat: 'romantic', text: "Sahada voleybol oynarken o odaklanmış halin ve sayı aldığındaki o gülüşün... Hepsi ayrı güzel." },
-            { cat: 'witty', text: "Platin sarısı saçlar + kahverengi gözler + voleybol refleksi = Kalbimde bloklanamayan sayı! 🏐😄" },
-            { cat: 'witty', text: "Voleybolda libero topu kurtarır ama senin bakışların karşısında benim savunma tamamen çöktü." },
-            { cat: 'witty', text: "Yeni saç rengin o kadar iyi olmuş ki, aynaların bile senden kıskanıp yansımayı unutmasından korkuyorum." },
+            { cat: 'romantic', text: "Kahverengi gözlerinle baktığında, yeni platin sarısı saçların kadar parlak bir gün başlıyor içimde, Hayatım." },
+            { cat: 'romantic', text: "Bazı güzellikler geçicidir; sen ise aklımda ve kalbimde kalıcı olmanın en tatlı halisin, Aşkım." },
+            { cat: 'romantic', text: "Gözlerinin kahvesi, saçlarının platin ışıltısı ve o tatlılığın... Hepsi ayrı güzel, Sarı Civcivim." },
+            { cat: 'witty', text: "Platin sarısı saçlar + kahverengi gözler + o tatlılık = Kalbimde tek kişilik taht! 😄💛" },
+            { cat: 'witty', text: "Yeni saç rengin o kadar iyi olmuş ki, aynaların bile senden kıskanıp yansımayı unutmasından korkuyorum, Hayatım." },
+            { cat: 'witty', text: "Sarı Civcivim dediğimde yüzünde oluşan o tatlı ifade, günün en iyi anı olabilir." },
             { cat: 'jealous', text: "Seni kıskanmak mı? Evet, hem de kahve gözlerine bakan herkesi ufak ufak radara alacak kadar! 😌" },
-            { cat: 'jealous', text: "Sahada rakiplere karşı güçlü ol ama dışarıda gülüşünü en çok hak eden kişinin ben olduğumu unutma." },
+            { cat: 'jealous', text: "Gülüşünü en çok hak eden kişinin ben olduğumu unutma, Aşkım; tatlı kıskançlığım hep bundan." },
             { cat: 'jealous', text: "Yeni platin saçlarınla etrafa saçtığın o ışıltı biraz fazla güzel; kıskanmamak için kendimi zor tutuyorum." }
         ];
 
@@ -921,13 +954,13 @@
                 statusText.innerText = "YouTube Şarkısı Açıldı 🎶";
                 mainBtn.innerText = "❚❚ Durdur";
                 miniBtn.innerText = "❚❚";
-                miniTitle.innerText = "🎶 Şarkı Çalıyor • Eylül'e Özel";
+                miniTitle.innerText = "🎶 Şarkı Çalıyor • Aşkım İçin";
             } else {
                 disc.classList.remove('playing');
                 statusText.innerText = "Şarkı Duraklatıldı";
                 mainBtn.innerText = "▶ Çal";
                 miniBtn.innerText = "▶";
-                miniTitle.innerText = "🎵 Şarkı Hazır • Eylül İçin";
+                miniTitle.innerText = "🎵 Şarkı Hazır • Aşkım İçin";
             }
         }
 
@@ -938,7 +971,7 @@
         }
 
         // Arka planda uçuşan simgeler
-        const symbols = ['❤️', '✨', '🏐', '🤎', '🤍', '💕'];
+        const symbols = ['❤️', '✨', '💛', '🤎', '🐥', '💕'];
         function createFloatingItem(isBurst = false) {
             const bg = document.getElementById('ambientBg');
             const el = document.createElement('div');
@@ -973,3 +1006,4 @@
     </script>
 </body>
 </html>
+Analiz ediliyor
