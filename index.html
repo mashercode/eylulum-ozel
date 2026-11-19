@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Eylül'e Özel ✨</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-gradient: linear-gradient(150deg, #100616 0%, #2a0d25 45%, #15091d 100%);
+            --accent-pink: #ff5d8f;
+            --accent-rose: #ff8fa3;
+            --accent-gold: #ffd166;
+            --accent-platinum: #f3e8ff;
+            --accent-brown: #c68b59;
+            --glass-bg: rgba(255, 255, 255, 0.055);
+            --glass-border: rgba(255, 255, 255, 0.13);
+            --text-main: #fff5f7;
+            --text-muted: #e5c6d0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--bg-gradient);
+            color: var(--text-main);
+            min-height: 100vh;
+            overflow-x: hidden;
+            line-height: 1.65;
+        }
+
+        /* Arka Plan Işık Küreleri ve Uçuşan Simgeler */
+        .ambient-bg {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .glow-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(85px);
+            opacity: 0.34;
+            animation: pulseOrb 9s ease-in-out infinite alternate;
+        }
+
+        .orb-1 {
+            width: 320px;
+            height: 320px;
+            background: #ff4d6d;
+            top: -60px;
+            left: -80px;
+        }
+
+        .orb-2 {
+            width: 360px;
+            height: 360px;
+            background: #9d4edd;
+            bottom: 8%;
+            right: -100px;
+            animation-delay: 2.5s;
+        }
+
+        .orb-3 {
+            width: 240px;
+            height: 240px;
+            background: #ffd166;
+            top: 45%;
+            left: 50%;
+            opacity: 0.14;
+            animation-delay: 4s;
+        }
+
+        @keyframes pulseOrb {
+            0% { transform: scale(1) translate(0, 0); opacity: 0.25; }
+            100% { transform: scale(1.25) translate(25px, 35px); opacity: 0.42; }
+        }
+
+        .floating-item {
+            position: absolute;
+            bottom: -45px;
+            animation: floatUp linear forwards;
+            opacity: 0;
+            user-select: none;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(0) rotate(0deg) scale(0.75); opacity: 0; }
+            15% { opacity: 0.72; }
+            85% { opacity: 0.72; }
+            100% { transform: translateY(-115vh) rotate(360deg) scale(1.15); opacity: 0; }
+        }
+
+        /* Giriş Ekranı */
+        #welcome-overlay {
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(circle at center, #2d0e28 0%, #0c040f 100%);
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            text-align: center;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+
+        #welcome-overlay.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .envelope-card {
+            background: rgba(255, 255, 255, 0.055);
+            border: 1px solid rgba(255, 143, 163, 0.32);
+            backdrop-filter: blur(18px);
+            padding: 38px 26px;
+            border-radius: 28px;
+            max-width: 390px;
+            width: 100%;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.55);
+            animation: floatCard 3.2s ease-in-out infinite;
+        }
+
+        @keyframes floatCard {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .badge-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 209, 102, 0.14);
+            border: 1px solid rgba(255, 209, 102, 0.35);
+            color: var(--accent-gold);
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .envelope-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.05rem;
+            color: #fff;
+            margin-bottom: 12px;
+        }
+
+        .envelope-sub {
+            color: var(--text-muted);
+            font-size: 0.94rem;
+            margin-bottom: 26px;
+        }
+
+        .open-btn {
+            background: linear-gradient(135deg, #ff4d6d 0%, #ff758f 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            box-shadow: 0 10px 25px rgba(255, 77, 109, 0.45);
+            transition: transform 0.2s ease;
+        }
+
+        .open-btn:active {
+            transform: scale(0.96);
+        }
+
+        /* Ana Konteyner */
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 32px 16px 95px;
+        }
+
+        /* Üst Müzik Barı (Sayfa İçi + Sabit Alt Oynatıcı) */
+        .music-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 143, 163, 0.25);
+            backdrop-filter: blur(14px);
+            border-radius: 20px;
+            padding: 12px 16px;
+            margin-bottom: 24px;
+        }
+
+        .music-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-width: 0;
+        }
+
+        .music-disc {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ff4d6d, #ffd166);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+            animation: spinDisc 6s linear infinite;
+            animation-play-state: paused;
+        }
+
+        .music-disc.playing {
+            animation-play-state: running;
+            box-shadow: 0 0 16px rgba(255, 117, 143, 0.6);
+        }
+
+        @keyframes spinDisc {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .music-texts {
+            overflow: hidden;
+        }
+
+        .music-label {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--accent-gold);
+            font-weight: 600;
+        }
+
+        .music-title {
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: #fff;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .music-actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .music-toggle-btn {
+            background: linear-gradient(135deg, #ff4d6d, #ff758f);
+            color: #fff;
+            border: none;
+            padding: 8px 14px;
+            border-radius: 50px;
+            font-size: 0.84rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .yt-link-btn {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--accent-gold);
+            border: 1px solid rgba(255, 209, 102, 0.3);
+            padding: 8px 11px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .yt-player-wrap {
+            display: none;
+            margin-bottom: 24px;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            background: #000;
+        }
+
+        .yt-player-wrap.active {
+            display: block;
+        }
+
+        /* Hero Başlık */
+        .hero {
+            text-align: center;
+            padding: 18px 8px 32px;
+        }
+
+        .hero-tag {
+            font-family: 'Caveat', cursive;
+            font-size: 1.75rem;
+            color: var(--accent-gold);
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.85rem;
+            line-height: 1.15;
+            background: linear-gradient(to right, #ffffff, #f3e8ff, #ff8fa3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            max-width: 500px;
+            margin: 0 auto 18px;
+        }
+
+        .detail-chips {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .chip {
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            padding: 6px 13px;
+            border-radius: 999px;
+            font-size: 0.82rem;
+            color: #ffe5ec;
+        }
+
+        /* Scroll Reveal Animasyonu */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1), transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Cam Kartlar */
+        .glass-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 26px;
+            padding: 26px 22px;
+            margin-bottom: 24px;
+            box-shadow: 0 14px 36px rgba(0, 0, 0, 0.28);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.52rem;
+            color: var(--accent-rose);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .letter-text p {
+            margin-bottom: 14px;
+            font-size: 0.98rem;
+            color: #f9eaf0;
+        }
+
+        .letter-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .signature {
+            font-family: 'Caveat', cursive;
+            font-size: 1.85rem;
+            color: var(--accent-gold);
+            text-align: right;
+            margin-top: 14px;
+        }
+
+        /* Özellik Kartları Izgarası */
+        .grid-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 14px;
+            margin-bottom: 24px;
+        }
+
+        @media (min-width: 560px) {
+            .grid-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .mini-card {
+            background: linear-gradient(150deg, rgba(255, 117, 143, 0.11), rgba(255, 255, 255, 0.03));
+            border: 1px solid rgba(255, 143, 163, 0.24);
+            border-radius: 22px;
+            padding: 20px;
+            transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+        }
+
+        .mini-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 143, 163, 0.55);
+            box-shadow: 0 12px 24px rgba(255, 77, 109, 0.15);
+        }
+
+        .mini-card .icon {
+            font-size: 1.85rem;
+            margin-bottom: 10px;
+            display: inline-block;
+            animation: gentleBounce 3s ease-in-out infinite;
+        }
+
+        @keyframes gentleBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-4px); }
+        }
+
+        .mini-card h3 {
+            font-size: 1.1rem;
+            color: #fff;
+            margin-bottom: 6px;
+        }
+
+        .mini-card p {
+            font-size: 0.91rem;
+            color: var(--text-muted);
+        }
+
+        /* Tatlı Kıskançlık & Espirili Bölüm */
+        .jealous-banner {
+            background: linear-gradient(135deg, rgba(255, 93, 143, 0.16), rgba(157, 78, 221, 0.14));
+            border: 1px solid rgba(255, 143, 163, 0.35);
+            border-radius: 24px;
+            padding: 24px 22px;
+            margin-bottom: 24px;
+        }
+
+        .jealous-quote {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.15rem;
+            color: #fff;
+            margin: 12px 0;
+            padding-left: 14px;
+            border-left: 3px solid var(--accent-gold);
+        }
+
+        /* Etkileşimli Söz / Mesaj Makinesi */
+        .note-generator {
+            text-align: center;
+        }
+
+        .filter-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 14px;
+        }
+
+        .tab-btn {
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--text-muted);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 7px 14px;
+            border-radius: 50px;
+            font-size: 0.84rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(135deg, #ff4d6d, #ff758f);
+            color: #fff;
+            border-color: transparent;
+            font-weight: 600;
+        }
+
+        .note-display {
+            min-height: 108px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.28);
+            border-radius: 18px;
+            padding: 20px;
+            margin: 12px 0 18px;
+            font-size: 1.04rem;
+            color: #fff0f5;
+            border: 1px dashed rgba(255, 179, 193, 0.34);
+            transition: opacity 0.25s ease;
+        }
+
+        .secondary-btn {
+            background: rgba(255, 255, 255, 0.12);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .secondary-btn:hover {
+            background: rgba(255, 117, 143, 0.28);
+            border-color: var(--accent-pink);
+        }
+
+        .secondary-btn:active {
+            transform: scale(0.96);
+        }
+
+        /* Final Soru & Sürpriz */
+        .final-box {
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .final-box h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .final-box p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 22px;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media (min-width: 480px) {
+            .btn-group {
+                flex-direction: row;
+            }
+        }
+
+        .yes-btn {
+            background: linear-gradient(135deg, #ff4d6d, #ff758f);
+            color: #fff;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-size: 0.98rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 8px 24px rgba(255, 77, 109, 0.42);
+            transition: transform 0.2s ease;
+            width: 100%;
+            max-width: 245px;
+        }
+
+        .yes-btn:active {
+            transform: scale(0.95);
+        }
+
+        #final-response {
+            display: none;
+            margin-top: 24px;
+            padding: 20px;
+            background: rgba(255, 209, 102, 0.13);
+            border: 1px solid rgba(255, 209, 102, 0.38);
+            border-radius: 18px;
+            animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        #final-response h3 {
+            color: var(--accent-gold);
+            font-size: 1.28rem;
+            margin-bottom: 6px;
+        }
+
+        @keyframes popIn {
+            0% { opacity: 0; transform: scale(0.85); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        /* Sabit Alt Mini Müzik Kontrolü */
+        .floating-player {
+            position: fixed;
+            bottom: 14px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 32px);
+            max-width: 460px;
+            background: rgba(22, 9, 29, 0.88);
+            border: 1px solid rgba(255, 143, 163, 0.35);
+            backdrop-filter: blur(16px);
+            border-radius: 999px;
+            padding: 8px 14px 8px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            z-index: 90;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+        }
+
+        .floating-player span {
+            font-size: 0.84rem;
+            color: #fff;
+            font-weight: 500;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .mini-play-btn {
+            background: linear-gradient(135deg, #ff4d6d, #ff758f);
+            color: #fff;
+            border: none;
+            border-radius: 999px;
+            padding: 7px 15px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.82rem;
+            color: rgba(255, 255, 255, 0.45);
+            margin-top: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Arka Plan Efektleri -->
+    <div class="ambient-bg" id="ambientBg">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+        <div class="glow-orb orb-3"></div>
+    </div>
+
+    <!-- Açılış Karşılama Ekranı -->
+    <div id="welcome-overlay">
+        <div class="envelope-card">
+            <div class="badge-pill">✨ Platin Parıltısı & Kahve Gözler • Eylül</div>
+            <h2 class="envelope-title">Sana Özel Bir Sayfa Var</h2>
+            <p class="envelope-sub">Biraz romantizm, biraz tatlı kıskançlık, voleybol enerjisi ve favori şarkın...</p>
+            <button class="open-btn" onclick="openSite()">Sürprizi Aç & Şarkıyı Başlat 🎶</button>
+        </div>
+    </div>
+
+    <!-- Ana Sayfa -->
+    <main class="container">
+
+        <!-- Üst Şarkı Barı -->
+        <div class="music-bar">
+            <div class="music-info">
+                <div class="music-disc" id="musicDisc">🎵</div>
+                <div class="music-texts">
+                    <div class="music-label">Senin İçin Seçilen Şarkı</div>
+                    <div class="music-title" id="musicStatusText">Şarkı Oynatıcıya Hazır</div>
+                </div>
+            </div>
+            <div class="music-actions">
+                <button class="music-toggle-btn" id="mainPlayBtn" onclick="toggleMusic()">▶ Çal</button>
+                <a class="yt-link-btn" href="https://www.youtube.com/watch?v=38n54IJa300&list=RD38n54IJa300&start_radio=1" target="_blank" rel="noopener noreferrer" title="YouTube'da Aç">YouTube ↗</a>
+            </div>
+        </div>
+
+        <!-- YouTube Gömülü Oynatıcı -->
+        <div class="yt-player-wrap" id="ytPlayerWrap">
+            <iframe
+                id="ytIframe"
+                width="100%"
+                height="205"
+                src="https://www.youtube.com/embed/38n54IJa300?list=RD38n54IJa300&enablejsapi=1&rel=0"
+                title="YouTube müzik çalar"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <!-- Hero -->
+        <header class="hero reveal">
+            <span class="hero-tag">İyi ki varsın, Eylül...</span>
+            <h1>Eylül ✨</h1>
+            <p>Kahverengi gözlerinin derinliği, yeni platin sarısı saçlarının ışıltısı ve sahadaki o durdurulamaz enerjinle kalbimin en güzel köşesindesin.</p>
+            <div class="detail-chips">
+                <span class="chip">🤎 Kahverengi Gözler</span>
+                <span class="chip">🤍 Yeni Platin Sarısı Saçlar</span>
+                <span class="chip">🏐 Voleybol Tutkusu</span>
+                <span class="chip">😌 Tatlı Kıskançlık</span>
+            </div>
+        </header>
+
+        <!-- Uzun Romantik Mektup -->
+        <section class="glass-card letter-text reveal">
+            <h2 class="section-title">💌 Sana Yazdığım Mektup</h2>
+            <p>
+                Eylül, bazı insanlar vardır; hayatına girdikten sonra sıradan görünen hiçbir şey eskisi gibi kalmaz. Seninle konuşmaya başladığım, seni tanıdığım günden beri aklımın en güzel yerinde hep sen varsın.
+            </p>
+            <p>
+                O derin kahverengi gözlerine baktığımda insanın kendini kaybetmemesi elde değil; üstüne bir de yeni platin sarısı saçlarınla ışığın iyice artmış, resmen göz kamaştırıyorsun. Sahada voleybol oynarken o bitmeyen hırsın, hızın ve her sayıdan sonraki o içten gülüşün ise ayrı bir büyü.
+            </p>
+            <p>
+                İtiraf edeyim, bazen tatlı bir kıskançlık da yok değil hani... Hem bu kadar güzel olup hem sahada parladığında, ya da etrafında senin o enerjine kapılanları fark ettiğimde içimden "keşke bu güzelliği ve neşeyi sadece ben görebilsem" diye geçirdiğim anlar oluyor. Ama en çok da senin mutlu olmanı, gülmeni istiyorum.
+            </p>
+            <p>
+                Bu sayfayı seninle konuşurken hissettiğim o tatlı heyecanı, gülümsemeleri ve sana dair sevdiğim her şeyi bir arada tutmak için yaptım. İyi ki varsın, Eylül.
+            </p>
+            <div class="signature">Seni hep merakla ve sevgiyle izleyen biri... ❤️</div>
+        </section>
+
+        <!-- Güzelliği, Saçları, Gözleri ve Voleybol Kartları -->
+        <section class="grid-cards reveal">
+            <div class="mini-card">
+                <span class="icon">🤎</span>
+                <h3>Kahverengi Gözlerin</h3>
+                <p>Sıcak, derin ve insanın içine işleyen o kahverengi bakışların; en karışık günümü bile tek bakışta sakinleştiriyor.</p>
+            </div>
+            <div class="mini-card">
+                <span class="icon">✨</span>
+                <h3>Yeni Platin Sarısı Saçların</h3>
+                <p>Yeni saç renginle ışığın ikiye katlanmış gibi; güneş vurduğunda da ışık altında da ayrı bir zarafet katıyor.</p>
+            </div>
+            <div class="mini-card">
+                <span class="icon">🏐</span>
+                <h3>Sahadaki Voleybol Aşkı</h3>
+                <p>Topu karşı sahaya gönderirken ki o odaklanmış halin ve o güzel reflekslerinle sahada bambaşka bir dünyadasın.</p>
+            </div>
+            <div class="mini-card">
+                <span class="icon">🌸</span>
+                <h3>Tatlılığın & Zarafetin</h3>
+                <p>Hem iddialı ve güçlü olup hem de bu kadar tatlı ve içten olabilmen seni gerçekten benzersiz kılıyor.</p>
+            </div>
+        </section>
+
+        <!-- Tatlı Kıskançlık & Espirili Bölüm -->
+        <section class="jealous-banner reveal">
+            <h2 class="section-title" style="margin-bottom: 8px;">😌 Küçük Bir Kıskançlık İtirafı</h2>
+            <p style="font-size: 0.94rem; color: var(--text-muted);">
+                Sana karşı dürüst olalım: kahverengi gözler, yeni platin sarısı saçlar ve sahadaki o enerji bir araya gelince kıskanmamak imkansız gibi bir şey!
+            </p>
+            <div class="jealous-quote">
+                "Sahada smaç basarken herkes alkışlasın, sorun yok; ama kalbime attığın o bakışların telif hakkı tamamen bende kalsın!"
+            </div>
+            <p style="font-size: 0.88rem; color: #ffd6e0;">
+                Tabii bu kıskançlık asla boğucu değil; tam tersine seni ne kadar önemsediğimin ve kaybetmek istemediğimin en tatlı hali.
+            </p>
+        </section>
+
+        <!-- Etkileşimli Sözler & Espirili Romantik Mesajlar -->
+        <section class="glass-card note-generator reveal">
+            <h2 class="section-title" style="justify-content: center;">💬 Senin İçin Sözler & Mesajlar</h2>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 12px;">
+                Bir kategori seç ve butona basarak yeni mesajlar keşfet:
+            </p>
+
+            <div class="filter-tabs">
+                <button class="tab-btn active" data-cat="all" onclick="selectCategory('all', this)">Tümü ✨</button>
+                <button class="tab-btn" data-cat="romantic" onclick="selectCategory('romantic', this)">Romantik ❤️</button>
+                <button class="tab-btn" data-cat="witty" onclick="selectCategory('witty', this)">Espirili 😄</button>
+                <button class="tab-btn" data-cat="jealous" onclick="selectCategory('jealous', this)">Kıskançlık 😌</button>
+            </div>
+
+            <div class="note-display" id="noteBox">
+                "Kahverengi gözlerinle baktığında, yeni platin sarısı saçların kadar parlak bir gün başlıyor içimde."
+            </div>
+
+            <button class="secondary-btn" onclick="nextQuote()">Yeni Söz / Mesaj Göster 🔄</button>
+        </section>
+
+        <!-- Final Sürpriz & Buluşma Alanı -->
+        <section class="glass-card final-box reveal">
+            <h2>Bir Kahveye Ya Da Güzel Bir Sohbete Ne Dersin?</h2>
+            <p>Voleybol molasında ya da müsait olduğun tatlı bir akşamda, kahverengi gözlerinin karşısında uzun uzun konuşmak isterim.</p>
+            <div class="btn-group">
+                <button class="yes-btn" onclick="celebrateFinal('Kahve sözü alındı! ☕❤️')">Kahve İçin Anlaştık ☕❤️</button>
+                <button class="yes-btn" style="background: linear-gradient(135deg, #9d4edd, #c77dff);" onclick="celebrateFinal('Sahanın yıldızıyla her an harika! 🏐✨')">Harika Olur Eylül 🏐✨</button>
+            </div>
+
+            <div id="final-response">
+                <h3 id="finalTitle">Günüm güzelleşti! 🌹</h3>
+                <p id="finalDesc" style="margin-bottom: 0; color: #fff;">Bu sayfa senin gülümsemen için yapıldı Eylül, iyi ki varsın!</p>
+            </div>
+        </section>
+
+        <footer>
+            Sadece Eylül'e özel hazırlandı • 🤎🤍🏐❤️
+        </footer>
+    </main>
+
+    <!-- Sabit Alt Müzik Kontrol Çubuğu -->
+    <div class="floating-player">
+        <span id="miniTrackTitle">🎵 Şarkı Hazır • Eylül İçin</span>
+        <button class="mini-play-btn" id="miniPlayBtn" onclick="toggleMusic()">▶ Çal</button>
+    </div>
+
+    <script>
+        const quotes = [
+            { cat: 'romantic', text: "Kahverengi gözlerinle baktığında, yeni platin sarısı saçların kadar parlak bir gün başlıyor içimde." },
+            { cat: 'romantic', text: "Bazı güzellikler geçicidir; sen ise aklımda ve kalbimde kalıcı olmanın en tatlı halisin, Eylül." },
+            { cat: 'romantic', text: "Sahada voleybol oynarken o odaklanmış halin ve sayı aldığındaki o gülüşün... Hepsi ayrı güzel." },
+            { cat: 'witty', text: "Platin sarısı saçlar + kahverengi gözler + voleybol refleksi = Kalbimde bloklanamayan sayı! 🏐😄" },
+            { cat: 'witty', text: "Voleybolda libero topu kurtarır ama senin bakışların karşısında benim savunma tamamen çöktü." },
+            { cat: 'witty', text: "Yeni saç rengin o kadar iyi olmuş ki, aynaların bile senden kıskanıp yansımayı unutmasından korkuyorum." },
+            { cat: 'jealous', text: "Seni kıskanmak mı? Evet, hem de kahve gözlerine bakan herkesi ufak ufak radara alacak kadar! 😌" },
+            { cat: 'jealous', text: "Sahada rakiplere karşı güçlü ol ama dışarıda gülüşünü en çok hak eden kişinin ben olduğumu unutma." },
+            { cat: 'jealous', text: "Yeni platin saçlarınla etrafa saçtığın o ışıltı biraz fazla güzel; kıskanmamak için kendimi zor tutuyorum." }
+        ];
+
+        let activeCategory = 'all';
+        let currentIndex = 0;
+        let isMusicPlaying = false;
+
+        function getFilteredQuotes() {
+            if (activeCategory === 'all') return quotes;
+            return quotes.filter(q => q.cat === activeCategory);
+        }
+
+        function selectCategory(cat, btnEl) {
+            activeCategory = cat;
+            currentIndex = 0;
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            btnEl.classList.add('active');
+            showQuoteAtIndex(0);
+        }
+
+        function showQuoteAtIndex(idx) {
+            const list = getFilteredQuotes();
+            const box = document.getElementById('noteBox');
+            box.style.opacity = 0;
+            setTimeout(() => {
+                box.innerText = '"' + list[idx].text + '"';
+                box.style.opacity = 1;
+            }, 180);
+        }
+
+        function nextQuote() {
+            const list = getFilteredQuotes();
+            currentIndex = (currentIndex + 1) % list.length;
+            showQuoteAtIndex(currentIndex);
+            burstIcons(10);
+        }
+
+        function openSite() {
+            document.getElementById('welcome-overlay').classList.add('hidden');
+            startMusic();
+            burstIcons(24);
+        }
+
+        function startMusic() {
+            const iframe = document.getElementById('ytIframe');
+            const wrap = document.getElementById('ytPlayerWrap');
+            iframe.src = "https://www.youtube.com/embed/38n54IJa300?list=RD38n54IJa300&autoplay=1&enablejsapi=1&rel=0";
+            wrap.classList.add('active');
+            isMusicPlaying = true;
+            updateMusicUI(true);
+        }
+
+        function toggleMusic() {
+            const iframe = document.getElementById('ytIframe');
+            const wrap = document.getElementById('ytPlayerWrap');
+            if (!isMusicPlaying) {
+                wrap.classList.add('active');
+                iframe.src = "https://www.youtube.com/embed/38n54IJa300?list=RD38n54IJa300&autoplay=1&enablejsapi=1&rel=0";
+                isMusicPlaying = true;
+                updateMusicUI(true);
+            } else {
+                iframe.src = "https://www.youtube.com/embed/38n54IJa300?list=RD38n54IJa300&autoplay=0&enablejsapi=1&rel=0";
+                isMusicPlaying = false;
+                updateMusicUI(false);
+            }
+        }
+
+        function updateMusicUI(playing) {
+            const disc = document.getElementById('musicDisc');
+            const statusText = document.getElementById('musicStatusText');
+            const mainBtn = document.getElementById('mainPlayBtn');
+            const miniBtn = document.getElementById('miniPlayBtn');
+            const miniTitle = document.getElementById('miniTrackTitle');
+
+            if (playing) {
+                disc.classList.add('playing');
+                statusText.innerText = "YouTube Şarkısı Açıldı 🎶";
+                mainBtn.innerText = "❚❚ Durdur";
+                miniBtn.innerText = "❚❚";
+                miniTitle.innerText = "🎶 Şarkı Çalıyor • Eylül'e Özel";
+            } else {
+                disc.classList.remove('playing');
+                statusText.innerText = "Şarkı Duraklatıldı";
+                mainBtn.innerText = "▶ Çal";
+                miniBtn.innerText = "▶";
+                miniTitle.innerText = "🎵 Şarkı Hazır • Eylül İçin";
+            }
+        }
+
+        function celebrateFinal(titleText) {
+            document.getElementById('finalTitle').innerText = titleText;
+            document.getElementById('final-response').style.display = 'block';
+            burstIcons(45);
+        }
+
+        // Arka planda uçuşan simgeler
+        const symbols = ['❤️', '✨', '🏐', '🤎', '🤍', '💕'];
+        function createFloatingItem(isBurst = false) {
+            const bg = document.getElementById('ambientBg');
+            const el = document.createElement('div');
+            el.className = 'floating-item';
+            el.innerText = symbols[Math.floor(Math.random() * symbols.length)];
+            el.style.left = Math.random() * 100 + 'vw';
+            el.style.fontSize = (isBurst ? (Math.random() * 14 + 18) : (Math.random() * 10 + 14)) + 'px';
+            const duration = isBurst ? (Math.random() * 2 + 2.5) : (Math.random() * 4 + 6);
+            el.style.animationDuration = duration + 's';
+            bg.appendChild(el);
+            setTimeout(() => el.remove(), duration * 1000);
+        }
+
+        function burstIcons(count) {
+            for (let i = 0; i < count; i++) {
+                setTimeout(() => createFloatingItem(true), i * 45);
+            }
+        }
+
+        setInterval(() => createFloatingItem(false), 650);
+
+        // Scroll Reveal Gözlemcisi
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.12 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
